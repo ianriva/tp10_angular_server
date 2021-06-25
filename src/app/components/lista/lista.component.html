@@ -1,0 +1,45 @@
+<div class="container col-md-10">
+    <div class="row">
+      <div class="col">
+        <div class="card-header">
+          <h4>{{ title }}</h4>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-striped text-center">
+            <thead class="thead-dark">
+              <tr>
+                <th>#</th>
+                <th>Instrumento</th>
+                <th>Marca</th>
+                <th>Precio</th>
+                <th >Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let instrumento of instrumentos; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ instrumento.instrumento }}</td>
+                <td>{{ instrumento.marca }}</td>
+                <td>{{ instrumento.precio | currency }}</td>
+                <td>
+                  <div class="form-group text-center" >
+                    <a
+                      routerLink="/formulario/{{ instrumento._id }}"
+                      class="btn btn-secondary"
+                      ><i class="fas fa-edit"></i
+                    ></a>&nbsp;
+                    <button
+                      class="btn btn-danger"
+                      (click)="delete(instrumento)"
+                    >
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,36 @@
+<div class="container d-flex justify-content-center my-4">
+  <div class="card" style="width: 35rem">
+    <div class="row">
+      <div class="col-sm-5 d-flex justify-content-center align-items-center">
+        <img
+          src="http://localhost:8080/upload/files/{{ instrumentoAux.imagen }}"
+          class="sizeImg"
+          style="cursor: pointer;"
+          (click)="instrumentoDetalle()"
+        />
+      </div>
+      <div class="col-sm-7">
+        <div class="card-body">
+          <h5 class="card-title">{{ instrumentoAux.instrumento }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted precio">
+            {{ instrumentoAux.precio | currency }}
+          </h6>
+          <p class="card-text">
+            <span *ngIf="instrumentoAux.costoEnvio == 'G'" class="gratis">
+              <img
+                src="http://localhost:8080/upload/files/camion.png"
+                style="max-width: 35px"
+              />
+              Envío gratis
+            </span>
+            <span *ngIf="instrumentoAux.costoEnvio != 'G'" class="costoEnvio">
+              Costo de envío al interior de Argentina:
+              {{ instrumentoAux.costoEnvio | currency: "AR":"$" }}
+            </span>
+          </p>
+          <p class="card-text">{{ instrumentoAux.cantidadVendida }} Vendidos</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

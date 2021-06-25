@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <a class="navbar-brand mr-0" routerLink="/"
+      ><img src="https://cdn2.iconfinder.com/data/icons/ballicons-2-vol-2/100/guitar-512.png" class="logo"
+    /></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/" data-toggle="collapse" data-target=".navbar-collapse.show">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/dondeEstamos" data-toggle="collapse" data-target=".navbar-collapse.show">Donde Estamos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/instrumentos" data-toggle="collapse" data-target=".navbar-collapse.show">Productos</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Admin
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/lista" data-toggle="collapse" data-target=".navbar-collapse.show">Listado</a>
+            <a class="dropdown-item" routerLink="/formulario" data-toggle="collapse" data-target=".navbar-collapse.show">Nuevo</a>
+          </div>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0" >
+        <input
+          class="form-control mr-sm-2"
+          type="search"
+          placeholder="Buscar instrumento"
+          aria-label="Search"
+          #filtro
+          (keyup)="buscarInstrumento(filtro.value)"
+        />
+      </form>
+    </div>
+  </nav>

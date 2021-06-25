@@ -1,0 +1,12 @@
+<div class="container">
+  <h1 class="display-4">Buscaste: "{{ termino }}"</h1>
+</div>
+<div>
+    <app-item-instrumento
+      *ngFor="let instrumento of instrumentosBuscados; let i = index"
+      (instrumentoSeleccionado)="instrumentoDetalle($event)"
+      [instrumentoAux]="instrumento"
+      [index]="instrumento._id"
+    >
+    </app-item-instrumento>
+  </div>
